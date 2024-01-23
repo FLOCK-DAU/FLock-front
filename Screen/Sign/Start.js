@@ -1,13 +1,14 @@
 import React from "react";
-import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View, Image } from "react-native";
+import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View, Image} from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import kakaoLoginImage from '../../assets/images/kakao_login.png'; // Updated import path
+import img from '../../assets/images/sheep.png'
+import ballimg from '../../assets/images/ball.png'
 
 const Start = () => {
     const navigation = useNavigation();
 
-    const goToSignin = () => {
-        navigation.navigate("Signin");
+    const goToCircle = () => {
+        navigation.navigate("Circle");
     };
 
     const goToSignup = () => {
@@ -17,14 +18,17 @@ const Start = () => {
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.top}>
-                <Text style={styles.logoText}>FLOCK</Text>
+                <Text style={styles.logoText}>FLOCK:)</Text>
                 <Text style={styles.introText}>언제나 어디서나 취미를 잇다.</Text>
+                <Image source={ballimg} style={styles.ballimg}></Image>
+                <Image source={img} style={styles.img}></Image>
+                
             </View>
             <View style={styles.down}>
                 <TouchableOpacity style={styles.signup} onPress={goToSignup}>
                     <Text style={styles.buttonText}>시작하기</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.signin} onPress={goToSignin}>
+                <TouchableOpacity style={styles.signin} onPress={goToCircle}>
                     <Text style={styles.buttonText}>카카오톡으로 로그인</Text>
                 </TouchableOpacity>
 
@@ -38,18 +42,18 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     top: {
-        flex: 7,
+        flex: 7.5,
         alignItems: "center",
     },
     down: {
-        flex: 3,
+        flex: 2.5,
         alignItems: "center",
     },
     logoText: {
         color: "#1b444b",
         fontSize: 60,
         textAlign: "center",
-        marginTop: 150,
+        marginTop: 100,
         fontWeight: "600",
     },
     introText:{
@@ -82,6 +86,19 @@ const styles = StyleSheet.create({
         width: "100%",
         height: "100%",
         resizeMode: "cover",
+    },
+    img: {
+        position: 'absolute',
+        top: 250, 
+        width: 250,
+        height: 250,
+    },
+    ballimg: {
+        position: 'absolute',
+        left:270,
+        top: 320, 
+        width: 50,
+        height: 50,
     },
 });
 
