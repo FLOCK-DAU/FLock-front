@@ -7,8 +7,8 @@ import ballimg from '../../assets/images/ball.png'
 const Start = () => {
     const navigation = useNavigation();
 
-    const goToCircle = () => {
-        navigation.navigate("Circle");
+    const goToClubStart = () => {
+        navigation.navigate("ClubStart");
     };
 
     const goToSignup = () => {
@@ -28,7 +28,7 @@ const Start = () => {
                 <TouchableOpacity style={styles.signup} onPress={goToSignup}>
                     <Text style={styles.buttonText}>시작하기</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.signin} onPress={goToCircle}>
+                <TouchableOpacity style={styles.signin} onPress={goToClubStart}>
                     <Text style={styles.buttonText}>카카오톡으로 로그인</Text>
                 </TouchableOpacity>
 
