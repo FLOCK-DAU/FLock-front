@@ -1,16 +1,20 @@
+//start.js
 import React from "react";
 import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View, Image} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import img from '../../assets/images/sheep.png'
 import ballimg from '../../assets/images/ball.png'
-
+import { KAKAO_AUTH_URL } from '../../OAuth';
+import { Linking } from 'react-native';
+import { WebView } from 'react-native-webview';
 const Start = () => {
     const navigation = useNavigation();
 
     const goToClubStart = () => {
-        navigation.navigate("ClubStart");
-    };
-
+        console.log('Opening Kakao Auth URL:', KAKAO_AUTH_URL);
+        navigation.navigate("Signin");
+      };
+      
     const goToSignup = () => {
         navigation.navigate("Signup");
     };

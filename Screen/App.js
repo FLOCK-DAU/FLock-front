@@ -7,6 +7,7 @@ import Signup from "../Screen/Sign/Signup";
 import FindAccount from './Sign/FindAccount';
 import PhoneNumberVerification from './Sign/PhoneNumberVerification';
 import ClubStart from './Club/ClubStart'
+import SigninHandeler from './Sign/SigninHandeler';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +22,7 @@ export default function App() {
         <Stack.Screen name="FindAccount" component={FindAccount} options={{ headerShown: false }} />
         <Stack.Screen name="PhoneNumberVerification" component={PhoneNumberVerification} options={{ headerShown: false }} />
         <Stack.Screen name="ClubStart" component={ClubStart} options={{ headerShown: false }} />
+        <Stack.Screen name="SigninHandeler" component={SigninHandeler} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
