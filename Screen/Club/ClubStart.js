@@ -3,10 +3,16 @@ import { View, Text, StyleSheet, TouchableOpacity, ScrollView, TextInput, Image 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import img from '../../assets/images/sheep.png'
 import AntDesign from 'react-native-vector-icons/AntDesign';
-
+import { useNavigation } from '@react-navigation/native';
 const ClubStart = () => {
     const [searchText, setSearchText] = useState("");
     const [filter, setFilter] = useState("all");
+    const navigation = useNavigation();
+
+    const handleArrowButtonPress = () => {
+        // Navigate to the ClubCategory
+        navigation.navigate('ClubCategory');
+    };
 
     const topMeetingsData = [
         {
@@ -106,7 +112,7 @@ const ClubStart = () => {
                 <View style={styles.additionalSection}>
                     <Text style={styles.additionalSectionText}>더 많은 모임을{'\n'} 살펴볼까요?</Text>
                     <Image source={img} style={styles.img}></Image>
-                    <TouchableOpacity style={styles.arrowButton}>
+                    <TouchableOpacity style={styles.arrowButton} onPress={handleArrowButtonPress}>
                         <MaterialCommunityIcons name="arrow-right" size={24} color="black" />
                     </TouchableOpacity>
                 </View>
